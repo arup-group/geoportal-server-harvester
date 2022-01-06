@@ -15,9 +15,23 @@
     <servlet-name>spring</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+
+  <!-- Filters required to function inside an Azure App Service -->
+  <filter>
+    <filter-name>EasyAuthFilter</filter-name>
+    <filter-class>com.microsoft.azure.appservice.EasyAuthFilter</filter-class>
+    <async-supported>true</async-supported>
+  </filter>
+
+  <filter>
+    <filter-name>AppServiceFilter</filter-name>
+    <filter-class>com.microsoft.azure.appservice.filters.AppServiceFilter</filter-class>
+    <async-supported>true</async-supported>
+  </filter>
+  <!-- End Azure Filters -->
   
   <!-- Uncomment to secure application -->
-  <!--filter>
+  <filter>
     <filter-name>springSecurityFilterChain</filter-name>
     <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
     <async-supported>true</async-supported>
@@ -27,7 +41,7 @@
     <url-pattern>/*</url-pattern>
     <dispatcher>ERROR</dispatcher>
     <dispatcher>REQUEST</dispatcher>
-  </filter-mapping-->
+  </filter-mapping>
   
   <session-config>
     <session-timeout>
