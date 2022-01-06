@@ -9,10 +9,10 @@
   <security:authentication-manager id="authenticationManager" alias="authenticationManager">
     <security:authentication-provider>
       <security:user-service>
-        <security:user name="${simple_gptadmin:gptadmin}" password="${simple_gptadminpass:gptadmin}" authorities="ROLE_ADMIN,ROLE_PUBLISHER" />
-        <security:user name="${simple_admin:admin}" password="${simple_adminpass:admin}" authorities="ROLE_ADMIN,ROLE_PUBLISHER" />
-        <security:user name="${simple_pub:publisher}" password="${simple_pubpass:publisher}" authorities="ROLE_PUBLISHER" />
-        <security:user name="${simple_user:user}" password="${simple_userpass:user}" authorities="ROLE_USER" />
+        <security:user name="${simple_gptadmin:}" password="${simple_gptadminpass:}" authorities="ROLE_ADMIN,ROLE_PUBLISHER" />
+        <!-- <security:user name="${simple_admin:}" password="${simple_adminpass:}" authorities="ROLE_ADMIN,ROLE_PUBLISHER" />
+        <security:user name="${simple_pub:}" password="${simple_pubpass:}" authorities="ROLE_PUBLISHER" />
+        <security:user name="${simple_user:}" password="${simple_userpass:}" authorities="ROLE_USER" /> -->
       </security:user-service>
     </security:authentication-provider>
   </security:authentication-manager>
